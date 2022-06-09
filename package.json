@@ -1,10 +1,10 @@
 {
   "name": "polyuportfolio",
   "version": "0.0.0",
-  "source": "./index.html",
+  "source": "./src/index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build ./index.html --public-url ./",
+    "build": "parcel build ./src/index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "repository": { 
