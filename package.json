@@ -7,14 +7,14 @@
     "build": "parcel build ./index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
-    "url": "git+https://github.com/jinlibot7/simplePortfolio"
+    "url": "git+https://github.com/jinlibot7/PolyUVirtualLabPortfolio"
   },
   "keywords": [],
   "author": "Luyin HU",
   "license": "ISC",
-  "homepage": "https://jinlibot7.github.io/simplePortfolio/",
+  "homepage": "https://jinlibot7.github.io/PolyUVirtualLabPortfolio/",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
     "gh-pages": "^4.0.0",
