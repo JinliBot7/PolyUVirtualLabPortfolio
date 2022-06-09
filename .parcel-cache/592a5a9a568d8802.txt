@@ -4854,7 +4854,7 @@
 73/home/lancerhly/Desktop/website/portfolio/node_modules/lodash/_getData.js1654777277324351559 0
 109/home/lancerhly/Desktop/website/portfolio/node_modules/@parcel/core/test/fixtures/invalid-source-not-file/src1654777277284351479 1
 78/home/lancerhly/Desktop/website/portfolio/node_modules/domhandler/package.json1654777277076351062 0
-41/home/lancerhly/Desktop/website/portfolio1654777301764399837 1
+41/home/lancerhly/Desktop/website/portfolio1654777415288606144 1
 107/home/lancerhly/Desktop/website/portfolio/node_modules/@parcel/transformer-js/parcel-swc.linux-x64-gnu.node1654777277820352554 0
 72/home/lancerhly/Desktop/website/portfolio/node_modules/p-locate/index.js1654777277032350974 0
 92/home/lancerhly/Desktop/website/portfolio/node_modules/@jridgewell/sourcemap-codec/README.md1654777277100351111 0
