@@ -6212,6 +6212,7 @@ em, i {
 }
 
 p {
+  color: #000;
   margin: 0 0 2em;
 }
 
@@ -8682,8 +8683,8 @@ body.is-touch .tiles article .content {
 }
 
 #header .logo .symbol img {
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   display: block;
 }
 
