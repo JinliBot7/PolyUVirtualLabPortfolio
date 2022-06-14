@@ -55,13 +55,38 @@
   padding:0 0;
   }
 
-  .projects {
+  .projectRobot {
     filter:grayscale(10%);
   }
-  .projects:hover{
+  .projectRobot:hover{
     filter:grayscale(0%);
     content:url("./images/robot.gif");
   }
+
+  .projectCartpole {
+    filter:grayscale(10%);
+  }
+  .projectCartpole:hover{
+    filter:grayscale(0%);
+    content:url("./images/cartpole.gif");
+  }
+
+  .projectProjectile{
+    filter:grayscale(10%);
+  }
+  .projectProjectile:hover{
+    filter:grayscale(0%);
+    content:url("./images/projectile.gif");
+  }
+
+  .projectSpring{
+    filter:grayscale(10%);
+  }
+  .projectSpring:hover{
+    filter:grayscale(0%);
+    content:url("./images/spring.gif");
+  }
+
   .center {
   margin: 0;
   position: absolute;
@@ -128,21 +153,72 @@
 
 <!-- Project Section -->
 
-<div class="w3-container " style="padding:100px 30px;background-color:black " id="project">
+<div class="w3-container " style="padding:150px 30px 100px 30px;background-color:black " id="project">
   <!--<hr class="new1">-->
   <h1 class="w3-center" style = "color:white;font-size:50px!important;font-weight:bold">Playgrounds</h1>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:64px;">
+  <div class="w3-row-padding" style="margin-top:40px">
+
+    <!--Projectile-->
+    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
       <div class="w3-card" style="background-color:black">
-        <img src="./images/robotCover.png" class="projects" style="height:260px" id="robotArmImg">
+        <img src="./images/projectileCover.png" class=" w3-container projectProjectile" style="height:260px" id="projectileImg">
         <div class="w3-container" style="color:white">
-          <p style="color:white;text-align:justify;font-size:26px">Learn the forward kinematics of a 5-DOF industrial robotic arm</p>
+          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Whet your appetite for POP: Projectile motion revisit</p>
+          <div class=" w3-container w3-center">
+            <button class="button-6" role="button" onclick="projectileLink()" onmouseover="buttonHoverProjectile()" onmouseout="buttonHoverProjectileOff()">Launch</button>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+
+    <!--Spring Mass Damper-->
+    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+      <div class="w3-card" style="background-color:black">
+        <img src="./images/springCover.png" class=" w3-container projectSpring" style="height:260px" id="springImg">
+        <div class="w3-container" style="color:white">
+          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;"> PID Control of tje mass-spring-damper system</p>
+          <div class=" w3-container w3-center">
+            <button class="button-6" role="button" onclick="springLink()" onmouseover="buttonHoverSpring()" onmouseout="buttonHoverSpringOff()">Launch</button>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <!--Cart Pole-->
+    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+      <div class="w3-card" style="background-color:black">
+        <img src="./images/cartpoleCover.png" class=" w3-container projectCartpole" style="height:260px" id="cartpoleImg">
+        <div class="w3-container" style="color:white">
+          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Pole placement control of the Cart-Pole system</p>
+          <div class=" w3-container w3-center">
+            <button class="button-6" role="button" onclick="cartpoleLink()" onmouseover="buttonHoverCartpole()" onmouseout="buttonHoverCartpoleOff()">Launch</button>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    
+
+
+    <!--Robot-->
+    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+      <div class="w3-card" style="background-color:black">
+        <img src="./images/robotCover.png" class=" w3-container projectRobot" style="height:260px" id="robotArmImg">
+        <div class="w3-container" style="color:white">
+          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Forward kinematics of a 5-DOF robotic arm</p>
           <div class=" w3-container w3-center">
             <button class="button-6" role="button" onclick="robotLink()" onmouseover="buttonHoverRobot()" onmouseout="buttonHoverRobotOff()">Launch</button>
           </div>
         </div>
       </div>
     </div>
+    
+
+    
+
+
+  </div>
 
     
 </div>
@@ -173,22 +249,68 @@ function w3_open() {
   }
 }
 
+// Robot
 function robotLink() {
   window.open("https://jinlibot7.github.io/RobotSimulatorWithLoader/")
 }
 
-
-
 function buttonHoverRobot(){
   document.getElementById('robotArmImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
-  console.log(document.getElementById('robotArmImg').src)
 }
 
-console.log(document.getElementById('robotArmImg').src)
 function buttonHoverRobotOff(){
   
   document.getElementById('robotArmImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
 }
+
+// Projectile
+function projectileLink() {
+  window.open("https://jinlibot7.github.io/ProjectileMotion/")
+}
+
+function buttonHoverProjectile(){
+  document.getElementById('projectileImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  
+}
+
+function buttonHoverProjectileOff(){
+  
+  document.getElementById('projectileImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+}
+
+// Spring
+function springLink() {
+  window.open("https://jinlibot7.github.io/massSpringDamper/")
+}
+
+function buttonHoverSpring(){
+  document.getElementById('springImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  
+}
+
+function buttonHoverSpringOff(){
+  
+  document.getElementById('springImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+}
+
+
+// Cartpole
+function cartpoleLink() {
+  window.open("https://jinlibot7.github.io/CartPole/")
+}
+
+function buttonHoverCartpole(){
+  document.getElementById('cartpoleImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  
+}
+
+
+function buttonHoverCartpoleOff(){
+  
+  document.getElementById('cartpoleImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+}
+
+
 
 
 // Close the sidebar with the close button
