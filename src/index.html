@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/button.css">
+    <link rel="stylesheet" href="./assets/css/loading.css">
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -95,133 +96,146 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   }
+  #page{display: none;}
+  #loading{display: block;}
   
   
     </style>
   </head>
-<body>
+<body onload="loadingFunction()">
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card" id="myNavbar" style="height: 100px!important;">
-    <a href="https://www.polyu.edu.hk/en/"><img class="logo" src="./images/polyuLogo.png" height=60px></a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="#home" class="w3-bar-item w3-button" style ="font-size:20px!important">Home</a>
-      <a href="#project" class="w3-bar-item w3-button"style ="font-size:20px!important">Playgrounds</a>
+  <div id="loading">
+    <div class="loader">
+      <div class="inner one"></div>
+      <div class="inner two"></div>
+      <div class="inner three"></div>
     </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
   </div>
-</div>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-  <a href="#project" onclick="w3_close()" class="w3-bar-item w3-button">Playgrounds</a>
-</nav>
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <video class="robotArmVideo" autoplay loop muted poster="./images/loading.gif">
-    <source src="./images/robotArm.mp4" type="video/mp4">
-  </video>
-  <div class="w3-display-left w3-text-white">
-    <img src="./images/logo1.png" style ="position:relative;top:120px;left:105px; height:80px">
-    <br>
-    <span class="smallText" style ="position:relative;top:200px;left:105px;"><b>P</b>olyU <b>O</b>nline <b>P</b>latform<br>
-    for Robotics & Control</span>
-    <br>
-    <br>
-    <span class="smallText" style ="position:relative;top:250px;left:105px;font-size:24px!important;">An interactive educational project supported
-    <br> by The Hong Kong Polytechnic University
-    </span>
-    
-  
-
-    <!--<p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>-->
-  </div> 
-  
-</header>
-
-
-
-
-<!-- Project Section -->
-
-<div class="w3-container " style="padding:150px 30px 100px 30px;background-color:black " id="project">
-  <!--<hr class="new1">-->
-  <h1 class="w3-center" style = "color:white;font-size:50px!important;font-weight:bold">Playgrounds</h1>
-  <div class="w3-row-padding" style="margin-top:40px">
-
-    <!--Projectile-->
-    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
-      <div class="w3-card" style="background-color:black">
-        <img src="./images/projectileCover.png" class=" w3-container projectProjectile" style="height:260px" id="projectileImg">
-        <div class="w3-container" style="color:white">
-          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Whet your appetite for POP: Projectile motion revisit</p>
-          <div class=" w3-container w3-center">
-            <button class="button-6" role="button" onclick="projectileLink()" onmouseover="buttonHoverProjectile()" onmouseout="buttonHoverProjectileOff()">Launch</button>
-          </div>
+  <div id="page">
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card" id="myNavbar" style="height: 100px!important;">
+        <a href="https://www.polyu.edu.hk/en/"><img class="logo" src="./images/polyuLogo.png" height=60px></a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+          <a href="#home" class="w3-bar-item w3-button" style ="font-size:20px!important">Home</a>
+          <a href="#project" class="w3-bar-item w3-button"style ="font-size:20px!important">Playgrounds</a>
         </div>
-      </div>    
-    </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-
-    <!--Spring Mass Damper-->
-    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
-      <div class="w3-card" style="background-color:black">
-        <img src="./images/springCover.png" class=" w3-container projectSpring" style="height:260px" id="springImg">
-        <div class="w3-container" style="color:white">
-          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;"> PID Control of tje mass-spring-damper system</p>
-          <div class=" w3-container w3-center">
-            <button class="button-6" role="button" onclick="springLink()" onmouseover="buttonHoverSpring()" onmouseout="buttonHoverSpringOff()">Launch</button>
-          </div>
-        </div>
-      </div>    
-    </div>
-
-    <!--Cart Pole-->
-    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
-      <div class="w3-card" style="background-color:black">
-        <img src="./images/cartpoleCover.png" class=" w3-container projectCartpole" style="height:260px" id="cartpoleImg">
-        <div class="w3-container" style="color:white">
-          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Pole placement control of the Cart-Pole system</p>
-          <div class=" w3-container w3-center">
-            <button class="button-6" role="button" onclick="cartpoleLink()" onmouseover="buttonHoverCartpole()" onmouseout="buttonHoverCartpoleOff()">Launch</button>
-          </div>
-        </div>
-      </div>    
-    </div>
-
-    
-
-
-    <!--Robot-->
-    <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
-      <div class="w3-card" style="background-color:black">
-        <img src="./images/robotCover.png" class=" w3-container projectRobot" style="height:260px" id="robotArmImg">
-        <div class="w3-container" style="color:white">
-          <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Forward kinematics of a 5-DOF robotic arm</p>
-          <div class=" w3-container w3-center">
-            <button class="button-6" role="button" onclick="robotLink()" onmouseover="buttonHoverRobot()" onmouseout="buttonHoverRobotOff()">Launch</button>
-          </div>
-        </div>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
     </div>
-    
 
-    
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+      <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+      <a href="#project" onclick="w3_close()" class="w3-bar-item w3-button">Playgrounds</a>
+    </nav>
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+      <video class="robotArmVideo" autoplay loop muted poster="./images/loading.gif">
+        <source src="./images/robotArm.mp4" type="video/mp4">
+      </video>
+      <div class="w3-display-left w3-text-white">
+        <img src="./images/logo1.png" style ="position:relative;top:120px;left:105px; height:80px">
+        <br>
+        <span class="smallText" style ="position:relative;top:200px;left:105px;"><b>P</b>olyU <b>O</b>nline <b>P</b>latform<br>
+        for Robotics & Control</span>
+        <br>
+        <br>
+        <span class="smallText" style ="position:relative;top:250px;left:105px;font-size:24px!important;">An interactive educational project supported
+        <br> by The Hong Kong Polytechnic University
+        </span>
+        
+      
+
+        <!--<p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>-->
+      </div> 
+      
+    </header>
 
 
+
+
+    <!-- Project Section -->
+
+    <div class="w3-container " style="padding:150px 30px 100px 30px;background-color:black " id="project">
+      <!--<hr class="new1">-->
+      <h1 class="w3-center" style = "color:white;font-size:50px!important;font-weight:bold">Playgrounds</h1>
+      <div class="w3-row-padding" style="margin-top:40px">
+
+        <!--Projectile-->
+        <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+          <div class="w3-card" style="background-color:black">
+            <img src="./images/projectileCover.png" class=" w3-container projectProjectile" style="height:260px" id="projectileImg">
+            <div class="w3-container" style="color:white">
+              <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Whet your appetite for POP: Projectile motion revisit</p>
+              <div class=" w3-container w3-center">
+                <button class="button-6" role="button" onclick="projectileLink()" onmouseover="buttonHoverProjectile()" onmouseout="buttonHoverProjectileOff()">Launch</button>
+              </div>
+            </div>
+          </div>    
+        </div>
+
+
+        <!--Spring Mass Damper-->
+        <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+          <div class="w3-card" style="background-color:black">
+            <img src="./images/springCover.png" class=" w3-container projectSpring" style="height:260px" id="springImg">
+            <div class="w3-container" style="color:white">
+              <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;"> PID Control of tje mass-spring-damper system</p>
+              <div class=" w3-container w3-center">
+                <button class="button-6" role="button" onclick="springLink()" onmouseover="buttonHoverSpring()" onmouseout="buttonHoverSpringOff()">Launch</button>
+              </div>
+            </div>
+          </div>    
+        </div>
+
+        <!--Cart Pole-->
+        <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+          <div class="w3-card" style="background-color:black">
+            <img src="./images/cartpoleCover.png" class=" w3-container projectCartpole" style="height:260px" id="cartpoleImg">
+            <div class="w3-container" style="color:white">
+              <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Pole placement control of the Cart-Pole system</p>
+              <div class=" w3-container w3-center">
+                <button class="button-6" role="button" onclick="cartpoleLink()" onmouseover="buttonHoverCartpole()" onmouseout="buttonHoverCartpoleOff()">Launch</button>
+              </div>
+            </div>
+          </div>    
+        </div>
+
+        
+
+
+        <!--Robot-->
+        <div class="w3-col l3 m6 w3-margin-bottom" style="margin-top:40px;">
+          <div class="w3-card" style="background-color:black">
+            <img src="./images/robotCover.png" class=" w3-container projectRobot" style="height:260px" id="robotArmImg">
+            <div class="w3-container" style="color:white">
+              <p style="color:white;text-align:center;font-size:24px;padding: 0 30px 0 30px;">Forward kinematics of a 5-DOF robotic arm</p>
+              <div class=" w3-container w3-center">
+                <button class="button-6" role="button" onclick="robotLink()" onmouseover="buttonHoverRobot()" onmouseout="buttonHoverRobotOff()">Launch</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+
+      </div>
+
+        
+    </div>
   </div>
 
-    
-</div>
 
 
 
@@ -269,13 +283,13 @@ function projectileLink() {
 }
 
 function buttonHoverProjectile(){
-  document.getElementById('projectileImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  document.getElementById('projectileImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/projectile.gif"
   
 }
 
 function buttonHoverProjectileOff(){
   
-  document.getElementById('projectileImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+  document.getElementById('projectileImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/projectileCover.png"
 }
 
 // Spring
@@ -284,13 +298,13 @@ function springLink() {
 }
 
 function buttonHoverSpring(){
-  document.getElementById('springImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  document.getElementById('springImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/spring.gif"
   
 }
 
 function buttonHoverSpringOff(){
   
-  document.getElementById('springImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+  document.getElementById('springImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/springCover.png "
 }
 
 
@@ -300,14 +314,14 @@ function cartpoleLink() {
 }
 
 function buttonHoverCartpole(){
-  document.getElementById('cartpoleImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robot.gif"
+  document.getElementById('cartpoleImg').src="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/cartpole.gif"
   
 }
 
 
 function buttonHoverCartpoleOff(){
   
-  document.getElementById('cartpoleImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/robotCover.png"
+  document.getElementById('cartpoleImg').src ="https://raw.githubusercontent.com/JinliBot7/PolyUVirtualLabPortfolio/main/src/images/cartpoleCover.png"
 }
 
 
@@ -317,6 +331,12 @@ function buttonHoverCartpoleOff(){
 function w3_close() {
     mySidebar.style.display = "none";
 }
+
+function loadingFunction()
+        {
+            document.getElementById("page").style.display = "block";
+            document.getElementById("loading").style.display = "none";
+        }
 </script>
 
 </body>
